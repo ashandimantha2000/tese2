@@ -4,27 +4,32 @@ interface StartScreenProps {
 
 export function StartScreen({ onStart }: StartScreenProps) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-      <div className="text-center max-w-sm">
-        <h1 className="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p className="text-lg text-gray-600 mb-8">Social Bingo</p>
-        
-        <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-          <h2 className="font-semibold text-gray-800 mb-3">How to play</h2>
-          <ul className="text-left text-gray-600 text-sm space-y-2">
-            <li>• Find people who match the questions</li>
-            <li>• Tap a square when you find a match</li>
-            <li>• Get 5 in a row to win!</li>
+    <div className="cyber-backdrop flex min-h-full items-center justify-center p-6">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgb(0_245_255/15%),transparent_36%),radial-gradient(circle_at_80%_25%,rgb(255_46_166/15%),transparent_42%)]" />
+
+      <section className="relative w-full max-w-md rounded-2xl neon-panel px-6 py-8 text-center sm:px-8 sm:py-10">
+        <p className="mb-2 font-display text-xs uppercase tracking-[0.45em] text-neon-cyan/80">Live Signal</p>
+        <h1 className="neon-title glitch-text mb-3 text-4xl font-black uppercase text-white sm:text-5xl">
+          Soc Ops
+        </h1>
+        <p className="mb-8 text-sm uppercase tracking-[0.3em] text-neon-blue/90">Social Bingo Protocol</p>
+
+        <div className="mb-8 rounded-xl hud-frame bg-bg-panel-soft/75 p-5 text-left">
+          <h2 className="mb-3 font-display text-sm uppercase tracking-[0.22em] text-neon-cyan">Mission Brief</h2>
+          <ul className="space-y-2 text-sm leading-relaxed text-text-muted">
+            <li>Find people who match each square.</li>
+            <li>Tap a square every time you confirm a match.</li>
+            <li>Complete any line of five to trigger BINGO.</li>
           </ul>
         </div>
 
         <button
           onClick={onStart}
-          className="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors"
+          className="neon-button w-full rounded-xl px-8 py-4 font-display text-base uppercase tracking-[0.22em]"
         >
-          Start Game
+          Initiate Run
         </button>
-      </div>
+      </section>
     </div>
   );
 }
